@@ -23,7 +23,7 @@ struct SplashView: View {
                     }
                 }
         } else {
-            ContentView()
+            HomeView()
         }
     }
 }
