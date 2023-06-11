@@ -20,13 +20,16 @@ struct HomeView: View {
                 .scaledToFit()
                 .frame(width: 250, height: 30)
             Text("\(viewModel.output.currentMonth ?? "")月")
-                .memoFont(size: 60)
+                .memoFont(size: 60, weight: .bold)
             usageAmount()
             Spacer()
         }
         .onAppear {
             viewModel.onAppear()
         }
+        .sheet(isPresented: viewModel.$binding.showAmountInputSheet, content: {
+            AmountInputView()
+        })
         .padding(.top, 50)
     }
 }
@@ -36,13 +39,13 @@ private extension HomeView {
     private func usageAmount() -> some View {
         HStack(spacing: 20) {
             Text("100")
-                .memoFont(size: 80)
+                .memoFont(size: 80, weight: .bold)
             plusButton()
         }
     }
     private func plusButton() -> some View {
         Button(action: {
-            print("タップ")
+            viewModel.binding.showAmountInputSheet.toggle()
         }, label: {
             Image(systemName: "plus.circle.fill")
                 .resizable()

@@ -16,7 +16,9 @@ final class HomeViewModel: ViewModelObject {
         @Published fileprivate(set) var currentMonth: String?
     }
 
-    final class Binding: BindingObject {}
+    final class Binding: BindingObject {
+        @Published var showAmountInputSheet = false
+    }
 
     let output: Output
     @BindableObject private(set) var binding: Binding

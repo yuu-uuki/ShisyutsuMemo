@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 extension Text {
-    public func memoFont(size: CGFloat) -> Text {
+    public func memoFont(size: CGFloat, weight: Font.Weight) -> Text {
         self
             .font(.system(size: size))
             .font(.headline)
-            .fontWeight(.bold)
+            .fontWeight(weight)
     }
 }
