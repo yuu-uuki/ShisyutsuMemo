@@ -19,6 +19,11 @@
 		48A7CFC62A34264E005A92FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A7CFC52A34264E005A92FC /* Assets.xcassets */; };
 		48A7CFCA2A34264E005A92FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A7CFC92A34264E005A92FC /* Preview Assets.xcassets */; };
 		48A7CFD52A343ED6005A92FC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7CFD42A343ED6005A92FC /* SplashView.swift */; };
+		48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */; };
+		48FFFC712A3B714100611C75 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC702A3B714100611C75 /* Tab.swift */; };
+		48FFFC732A3B737100611C75 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC722A3B737100611C75 /* CustomTabBar.swift */; };
+		48FFFC762A3B765600611C75 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC752A3B765600611C75 /* ExpenseView.swift */; };
+		48FFFC782A3B7AFC00611C75 /* UnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC772A3B7AFC00611C75 /* UnderLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		48A7CFC92A34264E005A92FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48A7CFD02A343C5D005A92FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		48A7CFD42A343ED6005A92FC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCornerRadius.swift; sourceTree = "<group>"; };
+		48FFFC702A3B714100611C75 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		48FFFC722A3B737100611C75 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		48FFFC752A3B765600611C75 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
+		48FFFC772A3B7AFC00611C75 /* UnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLine.swift; sourceTree = "<group>"; };
 		5B78F456E74989AE8F9F5FD4 /* Pods-ShisyutsuMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShisyutsuMemo.debug.xcconfig"; path = "Target Support Files/Pods-ShisyutsuMemo/Pods-ShisyutsuMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C4E31AF00A173223010FA4AB /* Pods_ShisyutsuMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShisyutsuMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0AE609EE0DF854E297F8FE /* Pods-ShisyutsuMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShisyutsuMemo.release.xcconfig"; path = "Target Support Files/Pods-ShisyutsuMemo/Pods-ShisyutsuMemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +66,7 @@
 		4850B9182A35BF0A00B73290 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				48FFFC742A3B762300611C75 /* Parts */,
 				48A7CFC32A342647005A92FC /* HomeView.swift */,
 				4850B9192A35BF2000B73290 /* HomeViewModel.swift */,
 			);
@@ -131,12 +142,32 @@
 		48A7CFD32A343EC2005A92FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48FFFC6D2A3B6C7800611C75 /* ViewModifier */,
 				4850B9242A35D5C200B73290 /* AmountInput */,
 				48A7CFD42A343ED6005A92FC /* SplashView.swift */,
 				4850B9182A35BF0A00B73290 /* Home */,
 				4850B91B2A35BFD500B73290 /* ViewModelObject.swift */,
+				48FFFC702A3B714100611C75 /* Tab.swift */,
+				48FFFC722A3B737100611C75 /* CustomTabBar.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		48FFFC6D2A3B6C7800611C75 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */,
+				48FFFC772A3B7AFC00611C75 /* UnderLine.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		48FFFC742A3B762300611C75 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				48FFFC752A3B765600611C75 /* ExpenseView.swift */,
+			);
+			path = Parts;
 			sourceTree = "<group>";
 		};
 		54D324D2E709F80D1D25BAFD /* Pods */ = {
@@ -274,10 +305,15 @@
 				4850B91F2A35C13000B73290 /* GetCurrentMonthUseCase.swift in Sources */,
 				4850B9222A35C95400B73290 /* Text+.swift in Sources */,
 				48A7CFC22A342647005A92FC /* ShisyutsuMemoApp.swift in Sources */,
+				48FFFC732A3B737100611C75 /* CustomTabBar.swift in Sources */,
+				48FFFC762A3B765600611C75 /* ExpenseView.swift in Sources */,
 				4850B91C2A35BFD500B73290 /* ViewModelObject.swift in Sources */,
+				48FFFC712A3B714100611C75 /* Tab.swift in Sources */,
+				48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */,
 				4850B9282A35DA2000B73290 /* AmountInputViewModel.swift in Sources */,
 				48A7CFD52A343ED6005A92FC /* SplashView.swift in Sources */,
 				4850B91A2A35BF2000B73290 /* HomeViewModel.swift in Sources */,
+				48FFFC782A3B7AFC00611C75 /* UnderLine.swift in Sources */,
 				4850B9262A35D5D900B73290 /* AmountInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

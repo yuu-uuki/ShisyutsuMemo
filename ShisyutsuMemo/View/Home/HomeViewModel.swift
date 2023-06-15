@@ -13,7 +13,7 @@ final class HomeViewModel: ViewModelObject {
     private let getCurrentMonthUseCase: GetCurrentMonthUseCase
 
     final class Output: OutputObject {
-        @Published fileprivate(set) var currentMonth: String?
+        @Published fileprivate(set) var currentMonth = ""
     }
 
     final class Binding: BindingObject {
