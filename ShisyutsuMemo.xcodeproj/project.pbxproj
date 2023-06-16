@@ -24,6 +24,9 @@
 		48FFFC732A3B737100611C75 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC722A3B737100611C75 /* CustomTabBar.swift */; };
 		48FFFC762A3B765600611C75 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC752A3B765600611C75 /* ExpenseView.swift */; };
 		48FFFC782A3B7AFC00611C75 /* UnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC772A3B7AFC00611C75 /* UnderLine.swift */; };
+		48FFFC812A3C8C4A00611C75 /* ExpenditureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC802A3C8C4A00611C75 /* ExpenditureDetailView.swift */; };
+		48FFFC832A3C8CBB00611C75 /* ExpenditureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC822A3C8CBB00611C75 /* ExpenditureDetailViewModel.swift */; };
+		48FFFC852A3C8E6A00611C75 /* ExpensesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC842A3C8E6A00611C75 /* ExpensesType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		48FFFC722A3B737100611C75 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		48FFFC752A3B765600611C75 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
 		48FFFC772A3B7AFC00611C75 /* UnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLine.swift; sourceTree = "<group>"; };
+		48FFFC802A3C8C4A00611C75 /* ExpenditureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureDetailView.swift; sourceTree = "<group>"; };
+		48FFFC822A3C8CBB00611C75 /* ExpenditureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureDetailViewModel.swift; sourceTree = "<group>"; };
+		48FFFC842A3C8E6A00611C75 /* ExpensesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesType.swift; sourceTree = "<group>"; };
 		5B78F456E74989AE8F9F5FD4 /* Pods-ShisyutsuMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShisyutsuMemo.debug.xcconfig"; path = "Target Support Files/Pods-ShisyutsuMemo/Pods-ShisyutsuMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C4E31AF00A173223010FA4AB /* Pods_ShisyutsuMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShisyutsuMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0AE609EE0DF854E297F8FE /* Pods-ShisyutsuMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShisyutsuMemo.release.xcconfig"; path = "Target Support Files/Pods-ShisyutsuMemo/Pods-ShisyutsuMemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 				48FFFC742A3B762300611C75 /* Parts */,
 				48A7CFC32A342647005A92FC /* HomeView.swift */,
 				4850B9192A35BF2000B73290 /* HomeViewModel.swift */,
+				48FFFC842A3C8E6A00611C75 /* ExpensesType.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 		48A7CFD32A343EC2005A92FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48FFFC7F2A3C8C1700611C75 /* CurrentMonth */,
 				48FFFC6D2A3B6C7800611C75 /* ViewModifier */,
 				4850B9242A35D5C200B73290 /* AmountInput */,
 				48A7CFD42A343ED6005A92FC /* SplashView.swift */,
@@ -168,6 +176,15 @@
 				48FFFC752A3B765600611C75 /* ExpenseView.swift */,
 			);
 			path = Parts;
+			sourceTree = "<group>";
+		};
+		48FFFC7F2A3C8C1700611C75 /* CurrentMonth */ = {
+			isa = PBXGroup;
+			children = (
+				48FFFC802A3C8C4A00611C75 /* ExpenditureDetailView.swift */,
+				48FFFC822A3C8CBB00611C75 /* ExpenditureDetailViewModel.swift */,
+			);
+			path = CurrentMonth;
 			sourceTree = "<group>";
 		};
 		54D324D2E709F80D1D25BAFD /* Pods */ = {
@@ -311,9 +328,12 @@
 				48FFFC712A3B714100611C75 /* Tab.swift in Sources */,
 				48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */,
 				4850B9282A35DA2000B73290 /* AmountInputViewModel.swift in Sources */,
+				48FFFC852A3C8E6A00611C75 /* ExpensesType.swift in Sources */,
 				48A7CFD52A343ED6005A92FC /* SplashView.swift in Sources */,
+				48FFFC832A3C8CBB00611C75 /* ExpenditureDetailViewModel.swift in Sources */,
 				4850B91A2A35BF2000B73290 /* HomeViewModel.swift in Sources */,
 				48FFFC782A3B7AFC00611C75 /* UnderLine.swift in Sources */,
+				48FFFC812A3C8C4A00611C75 /* ExpenditureDetailView.swift in Sources */,
 				4850B9262A35D5D900B73290 /* AmountInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
