@@ -13,6 +13,8 @@ struct ExpenditureDetailView: View {
         getCurrentMonthUseCase: GetCurrentMonthUseCaseProvider.provide()
     )
 
+    @State private var showModal = false
+
     let type: HomeView.ExpensesType
 
     var body: some View {
@@ -20,6 +22,9 @@ struct ExpenditureDetailView: View {
             amountView()
             ExpenseView()
             Spacer()
+        }
+        .sheet(isPresented: $showModal) {
+            ExpensesInputView()
         }
     }
 }
@@ -58,7 +63,7 @@ private extension ExpenditureDetailView {
                 .memoFont(size: 28, weight: .bold)
             if type == .current {
                 Button {
-                    print("支出入力画面を開く")
+                    showModal = true
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()

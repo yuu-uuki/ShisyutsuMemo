@@ -12,10 +12,15 @@ final class AmountInputViewModel: ViewModelObject {
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth: String?
+        @Published fileprivate(set) var paymentType: [String] = []
     }
 
     final class Binding: BindingObject {
         @Published var usageAmount = ""
+        @Published var amount = ""
+        @Published var paymentType = ""
+        @Published var memoText = ""
+        @Published var selectDate: Date = Date()
     }
 
     let output: Output
@@ -24,5 +29,6 @@ final class AmountInputViewModel: ViewModelObject {
     init() {
         self.output = Output()
         self.binding = Binding()
+        output.paymentType = Payment.type
     }
 }
