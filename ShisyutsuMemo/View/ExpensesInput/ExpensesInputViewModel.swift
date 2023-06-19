@@ -1,5 +1,5 @@
 //
-//  AmountInputViewModel.swift
+//  ExpensesInputViewModel.swift
 //  ShisyutsuMemo
 //
 //  Created by yuki.tanaka on 2023/06/11.
@@ -8,7 +8,9 @@
 import Foundation
 import Combine
 
-final class AmountInputViewModel: ViewModelObject {
+final class ExpensesInputViewModel: ViewModelObject {
+
+    private let expenditureUseCase: ExpenditureUseCase
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth: String?
@@ -26,9 +28,31 @@ final class AmountInputViewModel: ViewModelObject {
     let output: Output
     @BindableObject private(set) var binding: Binding
 
-    init() {
+    init(
+        expenditureUseCase: ExpenditureUseCase
+    ) {
         self.output = Output()
         self.binding = Binding()
         output.paymentType = Payment.type
+        self.expenditureUseCase = expenditureUseCase
+    }
+}
+
+extension ExpensesInputViewModel {
+    func onTapExpensesButton() {
+        expenditureUseCase.addExpenditure(
+            date: binding.selectDate,
+            amount: Int(binding.amount) ?? 0,
+            paymentType: binding.paymentType,
+            memo: binding.memoText
+        )
+    }
+
+    func fetchExpenditures() -> [any ExpenditureProtocol] {
+        expenditureUseCase.fetchExpenditures()
+    }
+
+    func onTapUpdateButton() {
+
     }
 }

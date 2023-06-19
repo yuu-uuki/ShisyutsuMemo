@@ -10,27 +10,30 @@ import SwiftUI
 struct ExpenditureDetailView: View {
 
     @ObservedObject var viewModel = ExpenditureDetailViewModel(
-        getCurrentMonthUseCase: GetCurrentMonthUseCaseProvider.provide()
+        getCurrentMonthUseCase: GetCurrentMonthUseCaseProvider.provide(),
+        expenditureUseCase: ExpenditureUseCaseProvider.provide()
     )
 
-    @State private var showModal = false
+    @State private var isShowModal = false
 
     let type: HomeView.ExpensesType
 
     var body: some View {
         VStack(spacing: 40) {
             amountView()
-            ExpenseView()
+            expenditureView(expenditure: viewModel.binding.expenditure)
             Spacer()
         }
-        .sheet(isPresented: $showModal) {
-            ExpensesInputView()
+        .onAppear {
+            viewModel.onAppear()
+        }
+        .sheet(isPresented: $isShowModal) {
+            ExpensesInputView(expenditureBinding: viewModel.$binding.expenditure, isShowModal: $isShowModal, type: type)
         }
     }
 }
 
 private extension ExpenditureDetailView {
-
     private func amountView() -> some View {
         VStack(spacing: 0) {
             amountHeaderView()
@@ -63,7 +66,7 @@ private extension ExpenditureDetailView {
                 .memoFont(size: 28, weight: .bold)
             if type == .current {
                 Button {
-                    showModal = true
+                    isShowModal = true
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
@@ -73,6 +76,16 @@ private extension ExpenditureDetailView {
             }
         }
         .padding(.vertical, 26)
+    }
+
+    private func expenditureView(expenditure: [any ExpenditureProtocol]) -> some View {
+        ScrollView {
+            LazyVStack(spacing: 0) {
+                ForEach(expenditure, id: \.id) { data in
+                    ExpenseView(expenditure: data)
+                }
+            }
+        }
     }
 }
 

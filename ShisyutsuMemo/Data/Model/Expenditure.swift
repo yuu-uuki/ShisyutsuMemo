@@ -20,7 +20,7 @@ class Expenditure: Object, ExpenditureProtocol {
     }
 }
 
-protocol ExpenditureProtocol {
+protocol ExpenditureProtocol: Identifiable, Hashable {
     var id: String { get }
     var date: Date { get set }
     var amount: Int { get set }

@@ -9,11 +9,14 @@ import Foundation
 import SwiftUI
 
 struct ExpenseView: View {
+
+    let expenditure: any ExpenditureProtocol
+
     var body: some View {
             HStack {
-                leftView()
+                leftView(date: expenditure.date, amount: expenditure.amount)
                 Spacer()
-                rightView()
+                rightView(paymentType: expenditure.paymentType, memo: expenditure.memo)
             }
             .padding(.vertical, 10)
             .modifier(UnderLine(lineWidth: 2))
@@ -21,30 +24,24 @@ struct ExpenseView: View {
 }
 
 extension ExpenseView {
-    private func leftView() -> some View {
+    private func leftView(date: Date, amount: Int) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("2023年6月13日")
+            Text(date.description)
                 .memoFont(size: 12, weight: .medium)
-            Text("￥ 200")
+            Text("￥ \(amount)")
                 .memoFont(size: 24, weight: .bold)
         }
     }
 
-    private func rightView() -> some View {
+    private func rightView(paymentType: String, memo: String) -> some View {
         VStack(alignment: .trailing, spacing: 10) {
-            Text("電子マネー")
+            Text(paymentType)
                 .memoFont(size: 14, weight: .bold)
                 .frame(width: 110, height: 32)
                 .background(Color("lightGray"))
                 .modifier(CustomCornerRadius(corner: 6, color: .clear))
-            Text("衣類、雑貨など")
+            Text(memo)
                 .memoFont(size: 12, weight: .medium)
         }
-    }
-}
-
-struct Expense_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpenseView()
     }
 }

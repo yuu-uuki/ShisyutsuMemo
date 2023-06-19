@@ -41,7 +41,9 @@ private extension HomeView {
                 ExpenditureDetailView(type: .previous)
                     .tag(Tab.previousMonth)
             }
+            .accentColor(.black)
             .padding(.horizontal, 24)
+            .padding(.bottom, 0)
             Divider()
             CustomTabBar(currentTab: $selectedTab)
         }
