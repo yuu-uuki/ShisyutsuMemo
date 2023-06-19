@@ -26,7 +26,7 @@ struct ExpenseView: View {
 extension ExpenseView {
     private func leftView(date: Date, amount: Int) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(date.description)
+            Text(date.formatted)
                 .memoFont(size: 12, weight: .medium)
             Text("￥ \(amount)")
                 .memoFont(size: 24, weight: .bold)
