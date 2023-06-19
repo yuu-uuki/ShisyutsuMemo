@@ -22,6 +22,8 @@ protocol ExpenditureUseCase {
     func fetchExpenditures() -> [any ExpenditureProtocol]
     func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol]
     func fetchLastMonthExpenditures() -> [any ExpenditureProtocol]
+    func fetchTotalExpenditureForCurrentMonth() -> Int
+    func fetchTotalExpenditureForLastMonth() -> Int
 }
 
 final private class ExpenditureUseCaseImpl: ExpenditureUseCase {
@@ -58,6 +60,14 @@ final private class ExpenditureUseCaseImpl: ExpenditureUseCase {
 
     func fetchLastMonthExpenditures() -> [any ExpenditureProtocol] {
         repository.fetchLastMonthExpenditures()
+    }
+
+    func fetchTotalExpenditureForCurrentMonth() -> Int {
+        return fetchCurrentMonthExpenditures().reduce(0) { $0 + $1.amount }
+    }
+
+    func fetchTotalExpenditureForLastMonth() -> Int {
+        return fetchLastMonthExpenditures().reduce(0) { $0 + $1.amount }
     }
 }
 
