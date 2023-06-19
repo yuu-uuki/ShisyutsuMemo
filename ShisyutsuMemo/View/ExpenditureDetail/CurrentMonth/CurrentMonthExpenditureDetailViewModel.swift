@@ -1,5 +1,5 @@
 //
-//  ExpenditureDetailViewModel.swift
+//  CurrentMonthExpenditureDetailViewModel.swift
 //  ShisyutsuMemo
 //
 //  Created by yuki.tanaka on 2023/06/16.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ExpenditureDetailViewModel: ViewModelObject {
+final class CurrentMonthExpenditureDetailViewModel: ViewModelObject {
 
     private let getCurrentMonthUseCase: GetCurrentMonthUseCase
     private let expenditureUseCase: ExpenditureUseCase
@@ -36,9 +36,9 @@ final class ExpenditureDetailViewModel: ViewModelObject {
     }
 }
 
-extension ExpenditureDetailViewModel {
+extension CurrentMonthExpenditureDetailViewModel {
     func onAppear() {
         output.currentMonth = getCurrentMonthUseCase.get().description
-        binding.expenditure = expenditureUseCase.fetchExpenditures()
+        binding.expenditure = expenditureUseCase.fetchCurrentMonthExpenditures()
     }
 }

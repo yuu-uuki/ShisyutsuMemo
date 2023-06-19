@@ -19,7 +19,7 @@ protocol ExpenditureRepository {
     func updateExpenditure(_ expenditure: any ExpenditureProtocol, date: Date, amount: Int, paymentType: String, memo: String)
     func deleteExpenditure(_ expenditure: any ExpenditureProtocol)
     func fetchExpenditures() -> [any ExpenditureProtocol]
-    func fetchThisMonthExpenditures() -> [any ExpenditureProtocol]
+    func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol]
     func fetchLastMonthExpenditures() -> [any ExpenditureProtocol]
 }
 
@@ -53,7 +53,7 @@ final private class ExpenditureRepositoryImpl: ExpenditureRepository {
         return Array(realm.objects(Expenditure.self))
     }
 
-    func fetchThisMonthExpenditures() -> [any ExpenditureProtocol] {
+    func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol] {
         let startOfThisMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Date()))!
         let expenditures = realm.objects(Expenditure.self).filter("date >= %@", startOfThisMonth)
         return Array(expenditures)

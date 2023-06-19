@@ -35,10 +35,10 @@ private extension HomeView {
     private func expenseHistoryView() -> some View {
         VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
-                ExpenditureDetailView(type: .current)
+                CurrentMonthExpenditureDetailView(type: .current)
                     .tag(Tab.currentMonth)
 
-                ExpenditureDetailView(type: .previous)
+                LastMonthExpenditureDetailView(type: .last)
                     .tag(Tab.previousMonth)
             }
             .accentColor(.black)

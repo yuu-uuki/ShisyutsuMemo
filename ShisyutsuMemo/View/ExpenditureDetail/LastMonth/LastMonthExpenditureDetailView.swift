@@ -1,15 +1,17 @@
 //
-//  CurrentMonthView.swift
+//  LastMonthExpenditureDetailView.swift
 //  ShisyutsuMemo
 //
-//  Created by yuki.tanaka on 2023/06/16.
+//  Created by yuki.tanaka on 2023/06/20.
 //
+
+import Foundation
 
 import SwiftUI
 
-struct ExpenditureDetailView: View {
+struct LastMonthExpenditureDetailView: View {
 
-    @ObservedObject var viewModel = ExpenditureDetailViewModel(
+    @ObservedObject var viewModel = LastMonthExpenditureDetailViewModel(
         getCurrentMonthUseCase: GetCurrentMonthUseCaseProvider.provide(),
         expenditureUseCase: ExpenditureUseCaseProvider.provide()
     )
@@ -33,7 +35,7 @@ struct ExpenditureDetailView: View {
     }
 }
 
-private extension ExpenditureDetailView {
+private extension LastMonthExpenditureDetailView {
     private func amountView() -> some View {
         VStack(spacing: 0) {
             amountHeaderView()
@@ -89,8 +91,8 @@ private extension ExpenditureDetailView {
     }
 }
 
-struct CurrentMonthView_Previews: PreviewProvider {
+struct LastMonthExpenditureDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenditureDetailView(type: .current)
+        LastMonthExpenditureDetailView(type: .last)
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 extension HomeView {
     enum ExpensesType {
         case current
-        case previous
+        case last
     }
 }
