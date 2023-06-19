@@ -17,6 +17,7 @@ struct ExpensesInputView: View {
     @State private var showUpdateAlert = false
 
     @Binding var expenditureBinding: [any ExpenditureProtocol]
+    @Binding var totalExpenditure: Int
     @Binding var isShowModal: Bool
     let type: HomeView.ExpensesType
 
@@ -124,7 +125,8 @@ extension ExpensesInputView {
         .alert("支出しますか？", isPresented: $showExpensesAlert) {
             Button("OK") {
                 viewModel.onTapExpensesButton()
-                self.expenditureBinding = viewModel.fetchExpenditures()
+                self.expenditureBinding = viewModel.fetchExpenditures(type)
+                self.totalExpenditure = viewModel.fetchTotalExpenditures(type)
                 isShowModal = false
             }
             Button("閉じる") {}

@@ -16,22 +16,21 @@ struct HomeView: View {
     @State private var selectedTab = Tab.currentMonth
 
     var body: some View {
-            VStack(spacing: 40) {
-                Image("icon_title")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 40)
-                expenseHistoryView()
-            }
-            .padding(.top, 20)
-            .onAppear {
-                viewModel.onAppear()
-            }
+        VStack(spacing: 40) {
+            Image("icon_title")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 40)
+            expenseHistoryView()
+        }
+        .padding(.top, 20)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 
 private extension HomeView {
-
     private func expenseHistoryView() -> some View {
         VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
@@ -41,9 +40,7 @@ private extension HomeView {
                 LastMonthExpenditureDetailView(type: .last)
                     .tag(Tab.previousMonth)
             }
-            .accentColor(.black)
-            .padding(.horizontal, 24)
-            .padding(.bottom, 0)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             Divider()
             CustomTabBar(currentTab: $selectedTab)
         }

@@ -19,16 +19,21 @@ struct CurrentMonthExpenditureDetailView: View {
     let type: HomeView.ExpensesType
 
     var body: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: 20) {
             amountView()
             expenditureView(expenditure: viewModel.binding.expenditure)
-            Spacer()
         }
+        .padding(.horizontal, 24)
         .onAppear {
             viewModel.onAppear()
         }
         .sheet(isPresented: $isShowModal) {
-            ExpensesInputView(expenditureBinding: viewModel.$binding.expenditure, isShowModal: $isShowModal, type: type)
+            ExpensesInputView(
+                expenditureBinding: viewModel.$binding.expenditure,
+                totalExpenditure: viewModel.$binding.totalExpenditure,
+                isShowModal: $isShowModal,
+                type: type
+            )
         }
     }
 }
@@ -40,7 +45,6 @@ private extension CurrentMonthExpenditureDetailView {
             amountFooterView()
         }
         .modifier(CustomCornerRadius(corner: 8))
-        .padding(.horizontal, 20)
     }
 
     private func amountHeaderView() -> some View {
@@ -62,7 +66,7 @@ private extension CurrentMonthExpenditureDetailView {
         HStack(spacing: 24) {
             Text("支出額")
                 .memoFont(size: 18, weight: .bold)
-            Text("￥ 1,000")
+            Text("￥ \(viewModel.binding.totalExpenditure)")
                 .memoFont(size: 28, weight: .bold)
             if type == .current {
                 Button {
@@ -80,7 +84,7 @@ private extension CurrentMonthExpenditureDetailView {
 
     private func expenditureView(expenditure: [any ExpenditureProtocol]) -> some View {
         ScrollView {
-            LazyVStack(spacing: 0) {
+            LazyVStack(spacing: 10) {
                 ForEach(expenditure, id: \.id) { data in
                     ExpenseView(expenditure: data)
                 }

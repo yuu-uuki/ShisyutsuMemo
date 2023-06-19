@@ -48,11 +48,21 @@ extension ExpensesInputViewModel {
         )
     }
 
-    func fetchExpenditures() -> [any ExpenditureProtocol] {
-        expenditureUseCase.fetchExpenditures()
+    func fetchExpenditures(_ type: HomeView.ExpensesType) -> [any ExpenditureProtocol] {
+        switch type {
+        case .current:
+            return expenditureUseCase.fetchCurrentMonthExpenditures()
+        case .last:
+            return expenditureUseCase.fetchLastMonthExpenditures()
+        }
     }
 
-    func onTapUpdateButton() {
-
+    func fetchTotalExpenditures(_ type: HomeView.ExpensesType) -> Int {
+        switch type {
+        case .current:
+            return expenditureUseCase.fetchTotalExpenditureForCurrentMonth()
+        case .last:
+            return expenditureUseCase.fetchTotalExpenditureForLastMonth()
+        }
     }
 }

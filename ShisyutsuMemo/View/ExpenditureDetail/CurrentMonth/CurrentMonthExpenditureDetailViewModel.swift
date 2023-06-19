@@ -20,6 +20,7 @@ final class CurrentMonthExpenditureDetailViewModel: ViewModelObject {
     final class Binding: BindingObject {
         @Published var showAmountInputSheet = false
         @Published var expenditure: [any ExpenditureProtocol] = []
+        @Published var totalExpenditure: Int = 0
     }
 
     let output: Output
@@ -40,5 +41,6 @@ extension CurrentMonthExpenditureDetailViewModel {
     func onAppear() {
         output.currentMonth = getCurrentMonthUseCase.get().description
         binding.expenditure = expenditureUseCase.fetchCurrentMonthExpenditures()
+        binding.totalExpenditure = expenditureUseCase.fetchTotalExpenditureForCurrentMonth()
     }
 }
