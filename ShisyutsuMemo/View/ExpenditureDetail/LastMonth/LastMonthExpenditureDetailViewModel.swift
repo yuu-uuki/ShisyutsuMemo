@@ -39,7 +39,7 @@ final class LastMonthExpenditureDetailViewModel: ViewModelObject {
 
 extension LastMonthExpenditureDetailViewModel {
     func onAppear() {
-        output.currentMonth = getCurrentMonthUseCase.get().description
+        output.currentMonth = (getCurrentMonthUseCase.get() - 1).description
         binding.expenditure = expenditureUseCase.fetchLastMonthExpenditures()
         binding.totalExpenditure = expenditureUseCase.fetchTotalExpenditureForLastMonth()
     }

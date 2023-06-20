@@ -22,7 +22,7 @@ struct ExpenseView: View {
                 rightView(paymentType: expenditure.paymentType, memo: expenditure.memo)
             }
             .padding(.vertical, 10)
-            .modifier(UnderLine(lineWidth: 2))
+            .modifier(UnderLine(lineWidth: 1))
             .contentShape(Rectangle())
             .onTapGesture {
                 isShowModal = true
