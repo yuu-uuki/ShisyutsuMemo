@@ -12,6 +12,9 @@ struct ExpenseView: View {
 
     let expenditure: any ExpenditureProtocol
 
+    @State private var isShowModal: Bool = false
+    var completionHandler: () -> Void?
+
     var body: some View {
             HStack {
                 leftView(date: expenditure.date, amount: expenditure.amount)
@@ -20,6 +23,21 @@ struct ExpenseView: View {
             }
             .padding(.vertical, 10)
             .modifier(UnderLine(lineWidth: 2))
+            .contentShape(Rectangle())
+            .onTapGesture {
+                isShowModal = true
+            }
+            .sheet(isPresented: $isShowModal, onDismiss: {
+                completionHandler()
+            }) {
+                ExpensesInputView(
+                    viewModel: ExpensesInputViewModel(
+                        expenditureUseCase: ExpenditureUseCaseProvider.provide(),
+                        updateExpenditure: expenditure
+                    ),
+                    isShowModal: $isShowModal,
+                    type: .update)
+            }
     }
 }
 

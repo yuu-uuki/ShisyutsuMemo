@@ -9,17 +9,13 @@ import SwiftUI
 
 struct ExpensesInputView: View {
 
-    @ObservedObject var viewModel = ExpensesInputViewModel(
-        expenditureUseCase: ExpenditureUseCaseProvider.provide()
-    )
+    @ObservedObject var viewModel: ExpensesInputViewModel
 
     @State private var showExpensesAlert = false
     @State private var showUpdateAlert = false
 
-    @Binding var expenditureBinding: [any ExpenditureProtocol]
-    @Binding var totalExpenditure: Int
     @Binding var isShowModal: Bool
-    let type: HomeView.ExpensesType
+    let type: ExpenditureAction
 
     /// グリッドの列の設定
     let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 10), count: 2)
@@ -40,6 +36,9 @@ struct ExpensesInputView: View {
             }
             .padding(.top, 40)
             .padding(.horizontal, 30)
+        }
+        .onAppear {
+            selectedItem = viewModel.binding.paymentType
         }
         .onTapGesture {
             dismissKeyboard()
@@ -103,7 +102,7 @@ extension ExpensesInputView {
     }
 
     private func footerButton() -> some View {
-        if type == .current {
+        if type == .input {
             return AnyView(expensesButton())
         } else {
             return AnyView(updateButton())
@@ -125,8 +124,6 @@ extension ExpensesInputView {
         .alert("支出しますか？", isPresented: $showExpensesAlert) {
             Button("OK") {
                 viewModel.onTapExpensesButton()
-                self.expenditureBinding = viewModel.fetchExpenditures(type)
-                self.totalExpenditure = viewModel.fetchTotalExpenditures(type)
                 isShowModal = false
             }
             Button("閉じる") {}
@@ -145,9 +142,10 @@ extension ExpensesInputView {
                 .cornerRadius(8)
         }
         .padding(.top, 12)
-        .alert("更新しますか？", isPresented: $showExpensesAlert) {
+        .alert("更新しますか？", isPresented: $showUpdateAlert) {
             Button("OK") {
-                print("押されたよ")
+                viewModel.onTapUpdateButton()
+                isShowModal = false
             }
             Button("閉じる") {}
         }

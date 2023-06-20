@@ -10,6 +10,7 @@
 		2A932D7E396EEE967E79FFC2 /* Pods_ShisyutsuMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E31AF00A173223010FA4AB /* Pods_ShisyutsuMemo.framework */; };
 		481D38482A40B538000A2D63 /* LastMonthExpenditureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */; };
 		481D384C2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */; };
+		481D38522A420AD6000A2D63 /* ExpenditureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38512A420AD6000A2D63 /* ExpenditureAction.swift */; };
 		4850B91A2A35BF2000B73290 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B9192A35BF2000B73290 /* HomeViewModel.swift */; };
 		4850B91C2A35BFD500B73290 /* ViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B91B2A35BFD500B73290 /* ViewModelObject.swift */; };
 		4850B91F2A35C13000B73290 /* GetCurrentMonthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B91E2A35C13000B73290 /* GetCurrentMonthUseCase.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailView.swift; sourceTree = "<group>"; };
 		481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailViewModel.swift; sourceTree = "<group>"; };
+		481D38512A420AD6000A2D63 /* ExpenditureAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureAction.swift; sourceTree = "<group>"; };
 		4850B9192A35BF2000B73290 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4850B91B2A35BFD500B73290 /* ViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelObject.swift; sourceTree = "<group>"; };
 		4850B91E2A35C13000B73290 /* GetCurrentMonthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentMonthUseCase.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				4850B9252A35D5D900B73290 /* ExpensesInputView.swift */,
 				4850B9272A35DA2000B73290 /* ExpensesInputViewModel.swift */,
+				481D38512A420AD6000A2D63 /* ExpenditureAction.swift */,
 			);
 			path = ExpensesInput;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				48FFFC8A2A3D9C2A00611C75 /* CustomTextInputField.swift in Sources */,
 				48FFFC882A3D8E4800611C75 /* PaymentType.swift in Sources */,
 				481D384C2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift in Sources */,
+				481D38522A420AD6000A2D63 /* ExpenditureAction.swift in Sources */,
 				48FFFC932A3EDE2F00611C75 /* ExpenditureUseCase.swift in Sources */,
 				48FFFC732A3B737100611C75 /* CustomTabBar.swift in Sources */,
 				48FFFC762A3B765600611C75 /* ExpenseView.swift in Sources */,

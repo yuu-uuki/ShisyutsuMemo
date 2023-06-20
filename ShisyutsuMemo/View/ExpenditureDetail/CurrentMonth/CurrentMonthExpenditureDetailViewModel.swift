@@ -43,4 +43,8 @@ extension CurrentMonthExpenditureDetailViewModel {
         binding.expenditure = expenditureUseCase.fetchCurrentMonthExpenditures()
         binding.totalExpenditure = expenditureUseCase.fetchTotalExpenditureForCurrentMonth()
     }
+
+    func onTapExpenseRow() {
+        print("タップされたよ")
+    }
 }

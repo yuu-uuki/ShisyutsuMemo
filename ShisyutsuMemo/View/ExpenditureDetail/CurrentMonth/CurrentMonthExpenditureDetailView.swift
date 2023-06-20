@@ -27,12 +27,15 @@ struct CurrentMonthExpenditureDetailView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .sheet(isPresented: $isShowModal) {
+        .sheet(isPresented: $isShowModal, onDismiss: {
+            viewModel.onAppear()
+        }) {
             ExpensesInputView(
-                expenditureBinding: viewModel.$binding.expenditure,
-                totalExpenditure: viewModel.$binding.totalExpenditure,
+                viewModel: ExpensesInputViewModel(
+                    expenditureUseCase: ExpenditureUseCaseProvider.provide(),
+                    updateExpenditure: nil),
                 isShowModal: $isShowModal,
-                type: type
+                type: .input
             )
         }
     }
@@ -86,7 +89,9 @@ private extension CurrentMonthExpenditureDetailView {
         ScrollView {
             LazyVStack(spacing: 10) {
                 ForEach(expenditure, id: \.id) { data in
-                    ExpenseView(expenditure: data)
+                    ExpenseView(expenditure: data) {
+                        viewModel.onAppear()
+                    }
                 }
             }
         }
