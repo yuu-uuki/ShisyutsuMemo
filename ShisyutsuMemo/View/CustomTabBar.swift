@@ -24,7 +24,7 @@ struct CustomTabBar: View {
                                 .renderingMode(.template)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
+                                .frame(width: proxy.size.width / 16, height: proxy.size.width / 16)
                                 .frame(maxWidth: .infinity)
                                 .foregroundColor(currentTab == tab ? .black : .gray)
                             Text(tab.label)
