@@ -69,6 +69,13 @@ extension ExpensesInputViewModel {
         )
     }
 
+    func onTapDeleteButton() {
+        guard let updateExpenditure else {
+            return
+        }
+        expenditureUseCase.deleteExpenditure(updateExpenditure)
+    }
+
     func fetchExpenditures(_ type: HomeView.ExpensesType) -> [any ExpenditureProtocol] {
         switch type {
         case .current:
