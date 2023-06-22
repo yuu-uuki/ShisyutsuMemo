@@ -31,6 +31,7 @@ final class HomeViewModel: ViewModelObject {
 
 extension HomeViewModel {
     func onAppear() {
-//        expenditureUseCase.
+        // ２か月前のデータは削除
+        expenditureUseCase.deleteExpendituresTwoMonthsAgo()
     }
 }
