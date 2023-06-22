@@ -10,8 +10,8 @@ import Combine
 
 final class LastMonthExpenditureDetailViewModel: ViewModelObject {
 
-    private let getCurrentMonthUseCase: GetCurrentMonthUseCase
-    private let expenditureUseCase: ExpenditureUseCase
+    private let getCurrentMonthUseCase = GetCurrentMonthUseCaseProvider.provide()
+    private let expenditureUseCase = ExpenditureUseCaseProvider.provide()
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth = ""
@@ -19,21 +19,16 @@ final class LastMonthExpenditureDetailViewModel: ViewModelObject {
 
     final class Binding: BindingObject {
         @Published var showAmountInputSheet = false
-        @Published var expenditure: [any ExpenditureProtocol] = []
+        @Published var expenditure: [Expenditure] = []
         @Published var totalExpenditure: Int = 0
     }
 
     let output: Output
     @BindableObject private(set) var binding: Binding
 
-    init(
-        getCurrentMonthUseCase: GetCurrentMonthUseCase,
-        expenditureUseCase: ExpenditureUseCase
-    ) {
+    init() {
         self.output = Output()
         self.binding = Binding()
-        self.getCurrentMonthUseCase = getCurrentMonthUseCase
-        self.expenditureUseCase = expenditureUseCase
     }
 }
 

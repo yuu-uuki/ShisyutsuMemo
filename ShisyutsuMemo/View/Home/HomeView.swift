@@ -9,9 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @ObservedObject var viewModel = HomeViewModel(
-        getCurrentMonthUseCase: GetCurrentMonthUseCaseProvider.provide()
-    )
+    @ObservedObject var viewModel = HomeViewModel()
 
     @State private var selectedTab = Tab.currentMonth
 
@@ -34,10 +32,10 @@ private extension HomeView {
     private func expenseHistoryView() -> some View {
         VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
-                CurrentMonthExpenditureDetailView(type: .current)
+                CurrentMonthExpenditureDetailView()
                     .tag(Tab.currentMonth)
 
-                LastMonthExpenditureDetailView(type: .last)
+                LastMonthExpenditureDetailView()
                     .tag(Tab.previousMonth)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

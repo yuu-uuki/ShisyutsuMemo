@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ExpenseView: View {
 
-    let expenditure: any ExpenditureProtocol
+    let expenditure: Expenditure
 
     @State private var isShowModal: Bool = false
     var completionHandler: () -> Void?
@@ -32,7 +32,6 @@ struct ExpenseView: View {
             }) {
                 ExpensesInputView(
                     viewModel: ExpensesInputViewModel(
-                        expenditureUseCase: ExpenditureUseCaseProvider.provide(),
                         updateExpenditure: expenditure
                     ),
                     isShowModal: $isShowModal,

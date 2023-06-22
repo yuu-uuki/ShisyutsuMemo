@@ -10,7 +10,7 @@ import Combine
 
 final class HomeViewModel: ViewModelObject {
 
-    private let getCurrentMonthUseCase: GetCurrentMonthUseCase
+    private let expenditureUseCase =  ExpenditureUseCaseProvider.provide()
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth = ""
@@ -23,15 +23,14 @@ final class HomeViewModel: ViewModelObject {
     let output: Output
     @BindableObject private(set) var binding: Binding
 
-    init(getCurrentMonthUseCase: GetCurrentMonthUseCase) {
+    init() {
         self.output = Output()
         self.binding = Binding()
-        self.getCurrentMonthUseCase = getCurrentMonthUseCase
     }
 }
 
 extension HomeViewModel {
     func onAppear() {
-        output.currentMonth = getCurrentMonthUseCase.get().description
+//        expenditureUseCase.
     }
 }

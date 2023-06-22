@@ -10,8 +10,8 @@ import Combine
 
 final class ExpensesInputViewModel: ViewModelObject {
 
-    private let expenditureUseCase: ExpenditureUseCase
-    private let updateExpenditure: (any ExpenditureProtocol)?
+    private let expenditureUseCase = ExpenditureUseCaseProvider.provide()
+    private let updateExpenditure: Expenditure?
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth: String?
@@ -29,13 +29,11 @@ final class ExpensesInputViewModel: ViewModelObject {
     @BindableObject private(set) var binding: Binding
 
     init(
-        expenditureUseCase: ExpenditureUseCase,
-        updateExpenditure: (any ExpenditureProtocol)?
+        updateExpenditure: Expenditure?
     ) {
         self.output = Output()
         self.binding = Binding()
         output.paymentType = Payment.type
-        self.expenditureUseCase = expenditureUseCase
         self.updateExpenditure = updateExpenditure
         if let  updateExpenditure {
             binding.amount = updateExpenditure.amount.description
@@ -74,23 +72,5 @@ extension ExpensesInputViewModel {
             return
         }
         expenditureUseCase.deleteExpenditure(updateExpenditure)
-    }
-
-    func fetchExpenditures(_ type: HomeView.ExpensesType) -> [any ExpenditureProtocol] {
-        switch type {
-        case .current:
-            return expenditureUseCase.fetchCurrentMonthExpenditures()
-        case .last:
-            return expenditureUseCase.fetchLastMonthExpenditures()
-        }
-    }
-
-    func fetchTotalExpenditures(_ type: HomeView.ExpensesType) -> Int {
-        switch type {
-        case .current:
-            return expenditureUseCase.fetchTotalExpenditureForCurrentMonth()
-        case .last:
-            return expenditureUseCase.fetchTotalExpenditureForLastMonth()
-        }
     }
 }

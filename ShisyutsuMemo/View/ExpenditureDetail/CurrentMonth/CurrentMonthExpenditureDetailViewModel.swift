@@ -10,8 +10,8 @@ import Combine
 
 final class CurrentMonthExpenditureDetailViewModel: ViewModelObject {
 
-    private let getCurrentMonthUseCase: GetCurrentMonthUseCase
-    private let expenditureUseCase: ExpenditureUseCase
+    private let getCurrentMonthUseCase = GetCurrentMonthUseCaseProvider.provide()
+    private let expenditureUseCase = ExpenditureUseCaseProvider.provide()
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth = ""
@@ -19,21 +19,17 @@ final class CurrentMonthExpenditureDetailViewModel: ViewModelObject {
 
     final class Binding: BindingObject {
         @Published var showAmountInputSheet = false
-        @Published var expenditure: [any ExpenditureProtocol] = []
+        @Published var expenditure: [Expenditure] = []
         @Published var totalExpenditure: Int = 0
+        @Published var isShowModal = false
     }
 
     let output: Output
     @BindableObject private(set) var binding: Binding
 
-    init(
-        getCurrentMonthUseCase: GetCurrentMonthUseCase,
-        expenditureUseCase: ExpenditureUseCase
-    ) {
+    init() {
         self.output = Output()
         self.binding = Binding()
-        self.getCurrentMonthUseCase = getCurrentMonthUseCase
-        self.expenditureUseCase = expenditureUseCase
     }
 }
 
@@ -42,9 +38,5 @@ extension CurrentMonthExpenditureDetailViewModel {
         output.currentMonth = getCurrentMonthUseCase.get().description
         binding.expenditure = expenditureUseCase.fetchCurrentMonthExpenditures()
         binding.totalExpenditure = expenditureUseCase.fetchTotalExpenditureForCurrentMonth()
-    }
-
-    func onTapExpenseRow() {
-        print("タップされたよ")
     }
 }

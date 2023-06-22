@@ -15,24 +15,25 @@ enum ExpenditureRepositoryProvider {
 }
 
 protocol ExpenditureRepository {
-    func addExpenditure(_ expenditure: any ExpenditureProtocol)
-    func updateExpenditure(_ expenditure: any ExpenditureProtocol, date: Date, amount: Int, paymentType: String, memo: String)
-    func deleteExpenditure(_ expenditure: any ExpenditureProtocol)
-    func fetchExpenditures() -> [any ExpenditureProtocol]
-    func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol]
-    func fetchLastMonthExpenditures() -> [any ExpenditureProtocol]
+    func addExpenditure(_ expenditure: Expenditure)
+    func updateExpenditure(_ expenditure: Expenditure, date: Date, amount: Int, paymentType: String, memo: String)
+    func deleteExpenditure(_ expenditure: Expenditure)
+    func deleteExpendituresTwoMonthsAgo()
+    func fetchExpenditures() -> [Expenditure]
+    func fetchCurrentMonthExpenditures() -> [Expenditure]
+    func fetchLastMonthExpenditures() -> [Expenditure]
 }
 
 final private class ExpenditureRepositoryImpl: ExpenditureRepository {
     private let realm = try! Realm()
 
-    func addExpenditure(_ expenditure: any ExpenditureProtocol) {
+    func addExpenditure(_ expenditure: Expenditure) {
         try! realm.write {
-            realm.add(expenditure as! Expenditure)
+            realm.add(expenditure)
         }
     }
 
-    func updateExpenditure(_ expenditure: any ExpenditureProtocol, date: Date, amount: Int, paymentType: String, memo: String) {
+    func updateExpenditure(_ expenditure: Expenditure, date: Date, amount: Int, paymentType: String, memo: String) {
         if let expenditureToUpdate = realm.object(ofType: Expenditure.self, forPrimaryKey: expenditure.id) {
             try! realm.write {
                 expenditureToUpdate.date = date
@@ -43,23 +44,36 @@ final private class ExpenditureRepositoryImpl: ExpenditureRepository {
         }
     }
 
-    func deleteExpenditure(_ expenditure: any ExpenditureProtocol) {
+    func deleteExpenditure(_ expenditure: Expenditure) {
         try! realm.write {
-            realm.delete(expenditure as! Expenditure)
+            realm.delete(expenditure)
         }
     }
 
-    func fetchExpenditures() -> [any ExpenditureProtocol] {
+    func deleteExpendituresTwoMonthsAgo() {
+        let realm = try! Realm()
+
+        let twoMonthsAgo = Calendar.current.date(byAdding: .month, value: -2, to: Date())!
+        let startOfTwoMonthsAgo = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: twoMonthsAgo))!
+
+        let oldExpenditures = realm.objects(Expenditure.self).filter("date < %@", startOfTwoMonthsAgo)
+
+        try! realm.write {
+            realm.delete(oldExpenditures)
+        }
+    }
+
+    func fetchExpenditures() -> [Expenditure] {
         return Array(realm.objects(Expenditure.self))
     }
 
-    func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol] {
+    func fetchCurrentMonthExpenditures() -> [Expenditure] {
         let startOfThisMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Date()))!
         let expenditures = realm.objects(Expenditure.self).filter("date >= %@", startOfThisMonth)
         return Array(expenditures)
     }
 
-    func fetchLastMonthExpenditures() -> [any ExpenditureProtocol] {
+    func fetchLastMonthExpenditures() -> [Expenditure] {
         let startOfThisMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Date()))!
         let startOfLastMonth = Calendar.current.date(byAdding: .month, value: -1, to: startOfThisMonth)!
         let expenditures = realm.objects(Expenditure.self).filter("date >= %@ AND date < %@", startOfLastMonth, startOfThisMonth)

@@ -17,11 +17,11 @@ enum ExpenditureUseCaseProvider {
 
 protocol ExpenditureUseCase {
     func addExpenditure(date: Date, amount: Int, paymentType: String, memo: String)
-    func updateExpenditure(_ expenditure: any ExpenditureProtocol, date: Date, amount: Int, paymentType: String, memo: String)
-    func deleteExpenditure(_ expenditure: any ExpenditureProtocol)
-    func fetchExpenditures() -> [any ExpenditureProtocol]
-    func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol]
-    func fetchLastMonthExpenditures() -> [any ExpenditureProtocol]
+    func updateExpenditure(_ expenditure: Expenditure, date: Date, amount: Int, paymentType: String, memo: String)
+    func deleteExpenditure(_ expenditure: Expenditure)
+    func fetchExpenditures() -> [Expenditure]
+    func fetchCurrentMonthExpenditures() -> [Expenditure]
+    func fetchLastMonthExpenditures() -> [Expenditure]
     func fetchTotalExpenditureForCurrentMonth() -> Int
     func fetchTotalExpenditureForLastMonth() -> Int
 }
@@ -42,23 +42,23 @@ final private class ExpenditureUseCaseImpl: ExpenditureUseCase {
         repository.addExpenditure(newExpenditure)
     }
 
-    func updateExpenditure(_ expenditure: any ExpenditureProtocol, date: Date, amount: Int, paymentType: String, memo: String) {
+    func updateExpenditure(_ expenditure: Expenditure, date: Date, amount: Int, paymentType: String, memo: String) {
         repository.updateExpenditure(expenditure, date: date, amount: amount, paymentType: paymentType, memo: memo)
     }
 
-    func deleteExpenditure(_ expenditure: any ExpenditureProtocol) {
+    func deleteExpenditure(_ expenditure: Expenditure) {
         repository.deleteExpenditure(expenditure)
     }
 
-    func fetchExpenditures() -> [any ExpenditureProtocol] {
+    func fetchExpenditures() -> [Expenditure] {
         return repository.fetchExpenditures()
     }
 
-    func fetchCurrentMonthExpenditures() -> [any ExpenditureProtocol] {
+    func fetchCurrentMonthExpenditures() -> [Expenditure] {
         repository.fetchCurrentMonthExpenditures()
     }
 
-    func fetchLastMonthExpenditures() -> [any ExpenditureProtocol] {
+    func fetchLastMonthExpenditures() -> [Expenditure] {
         repository.fetchLastMonthExpenditures()
     }
 

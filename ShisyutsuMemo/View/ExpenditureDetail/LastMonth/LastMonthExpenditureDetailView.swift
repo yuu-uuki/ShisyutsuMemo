@@ -9,14 +9,7 @@ import SwiftUI
 
 struct LastMonthExpenditureDetailView: View {
 
-    @ObservedObject var viewModel = LastMonthExpenditureDetailViewModel(
-        getCurrentMonthUseCase: GetCurrentMonthUseCaseProvider.provide(),
-        expenditureUseCase: ExpenditureUseCaseProvider.provide()
-    )
-
-    @State private var isShowModal = false
-
-    let type: HomeView.ExpensesType
+    @ObservedObject var viewModel = LastMonthExpenditureDetailViewModel()
 
     var body: some View {
         VStack(spacing: 20) {
@@ -60,21 +53,11 @@ private extension LastMonthExpenditureDetailView {
                 .memoFont(size: 18, weight: .bold)
             Text("￥ \(viewModel.binding.totalExpenditure)")
                 .memoFont(size: 28, weight: .bold)
-            if type == .current {
-                Button {
-                    isShowModal = true
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                }
-                .foregroundColor(.black)
-            }
         }
         .padding(.vertical, 26)
     }
 
-    private func expenditureView(expenditure: [any ExpenditureProtocol]) -> some View {
+    private func expenditureView(expenditure: [Expenditure]) -> some View {
         ScrollView {
             LazyVStack(spacing: 10) {
                 ForEach(expenditure, id: \.id) { data in
@@ -89,6 +72,6 @@ private extension LastMonthExpenditureDetailView {
 
 struct LastMonthExpenditureDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LastMonthExpenditureDetailView(type: .last)
+        LastMonthExpenditureDetailView()
     }
 }
