@@ -19,6 +19,7 @@ protocol ExpenditureRepository {
     func updateExpenditure(_ expenditure: Expenditure, date: Date, amount: Int, paymentType: String, memo: String)
     func deleteExpenditure(_ expenditure: Expenditure)
     func deleteExpendituresTwoMonthsAgo()
+    func deleteAllData() throws
     func fetchExpenditures() -> [Expenditure]
     func fetchCurrentMonthExpenditures() -> [Expenditure]
     func fetchLastMonthExpenditures() -> [Expenditure]
@@ -60,6 +61,14 @@ final private class ExpenditureRepositoryImpl: ExpenditureRepository {
 
         try! realm.write {
             realm.delete(oldExpenditures)
+        }
+    }
+
+    func deleteAllData() throws {
+        let realm = try Realm()
+
+        try realm.write {
+            realm.deleteAll()
         }
     }
 

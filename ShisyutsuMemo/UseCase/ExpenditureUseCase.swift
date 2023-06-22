@@ -20,6 +20,7 @@ protocol ExpenditureUseCase {
     func updateExpenditure(_ expenditure: Expenditure, date: Date, amount: Int, paymentType: String, memo: String)
     func deleteExpenditure(_ expenditure: Expenditure)
     func deleteExpendituresTwoMonthsAgo()
+    func deleteAllData() -> Result<Void, Error>
     func fetchExpenditures() -> [Expenditure]
     func fetchCurrentMonthExpenditures() -> [Expenditure]
     func fetchLastMonthExpenditures() -> [Expenditure]
@@ -53,6 +54,15 @@ final private class ExpenditureUseCaseImpl: ExpenditureUseCase {
 
     func deleteExpendituresTwoMonthsAgo() {
         repository.deleteExpendituresTwoMonthsAgo()
+    }
+
+    func deleteAllData() -> Result<Void, Error> {
+        do {
+            try repository.deleteAllData()
+            return .success(())
+        } catch {
+            return .failure(error)
+        }
     }
 
     func fetchExpenditures() -> [Expenditure] {
