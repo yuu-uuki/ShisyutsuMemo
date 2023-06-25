@@ -180,6 +180,7 @@
 			children = (
 				48CC99792A4833D000F35A9E /* GoogleService-Info.plist */,
 				48A7CFD02A343C5D005A92FC /* Info.plist */,
+				48CC99752A4830F900F35A9E /* AppDelegate.swift */,
 				48A7CFC12A342647005A92FC /* ShisyutsuMemoApp.swift */,
 				4850B9202A35C94000B73290 /* Extension */,
 				48FFFC8B2A3EDCED00611C75 /* Data */,
@@ -188,7 +189,6 @@
 				48A7CFC52A34264E005A92FC /* Assets.xcassets */,
 				48A7CFC72A34264E005A92FC /* ShisyutsuMemo.entitlements */,
 				48A7CFC82A34264E005A92FC /* Preview Content */,
-				48CC99752A4830F900F35A9E /* AppDelegate.swift */,
 			);
 			path = ShisyutsuMemo;
 			sourceTree = "<group>";
