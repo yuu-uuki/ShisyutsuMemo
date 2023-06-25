@@ -27,6 +27,9 @@
 		48CC99652A44A3A100F35A9E /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC99642A44A3A100F35A9E /* TermsOfServiceView.swift */; };
 		48CC99672A44A4C000F35A9E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC99662A44A4BF00F35A9E /* SettingViewModel.swift */; };
 		48CC99692A44AD9E00F35A9E /* TermsOfService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC99682A44AD9E00F35A9E /* TermsOfService.swift */; };
+		48CC99762A4830F900F35A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC99752A4830F900F35A9E /* AppDelegate.swift */; };
+		48CC997A2A4833D000F35A9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48CC99792A4833D000F35A9E /* GoogleService-Info.plist */; };
+		48CC997D2A4834F800F35A9E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 48CC997C2A4834F800F35A9E /* FirebaseAnalytics */; };
 		48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */; };
 		48FFFC712A3B714100611C75 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC702A3B714100611C75 /* Tab.swift */; };
 		48FFFC732A3B737100611C75 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC722A3B737100611C75 /* CustomTabBar.swift */; };
@@ -65,6 +68,8 @@
 		48CC99642A44A3A100F35A9E /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
 		48CC99662A44A4BF00F35A9E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		48CC99682A44AD9E00F35A9E /* TermsOfService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfService.swift; sourceTree = "<group>"; };
+		48CC99752A4830F900F35A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48CC99792A4833D000F35A9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCornerRadius.swift; sourceTree = "<group>"; };
 		48FFFC702A3B714100611C75 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		48FFFC722A3B737100611C75 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CC997D2A4834F800F35A9E /* FirebaseAnalytics in Frameworks */,
 				2A932D7E396EEE967E79FFC2 /* Pods_ShisyutsuMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +178,7 @@
 		48A7CFC02A342647005A92FC /* ShisyutsuMemo */ = {
 			isa = PBXGroup;
 			children = (
+				48CC99792A4833D000F35A9E /* GoogleService-Info.plist */,
 				48A7CFD02A343C5D005A92FC /* Info.plist */,
 				48A7CFC12A342647005A92FC /* ShisyutsuMemoApp.swift */,
 				4850B9202A35C94000B73290 /* Extension */,
@@ -181,6 +188,7 @@
 				48A7CFC52A34264E005A92FC /* Assets.xcassets */,
 				48A7CFC72A34264E005A92FC /* ShisyutsuMemo.entitlements */,
 				48A7CFC82A34264E005A92FC /* Preview Content */,
+				48CC99752A4830F900F35A9E /* AppDelegate.swift */,
 			);
 			path = ShisyutsuMemo;
 			sourceTree = "<group>";
@@ -333,6 +341,9 @@
 			dependencies = (
 			);
 			name = ShisyutsuMemo;
+			packageProductDependencies = (
+				48CC997C2A4834F800F35A9E /* FirebaseAnalytics */,
+			);
 			productName = ShisyutsuMemo;
 			productReference = 48A7CFBE2A342647005A92FC /* ShisyutsuMemo.app */;
 			productType = "com.apple.product-type.application";
@@ -361,6 +372,9 @@
 				Base,
 			);
 			mainGroup = 48A7CFB52A342647005A92FC;
+			packageReferences = (
+				48CC997B2A4834F800F35A9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 48A7CFBF2A342647005A92FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +391,7 @@
 			files = (
 				48A7CFCA2A34264E005A92FC /* Preview Assets.xcassets in Resources */,
 				48A7CFC62A34264E005A92FC /* Assets.xcassets in Resources */,
+				48CC997A2A4833D000F35A9E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +466,7 @@
 				48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */,
 				4850B9282A35DA2000B73290 /* ExpensesInputViewModel.swift in Sources */,
 				48CC99652A44A3A100F35A9E /* TermsOfServiceView.swift in Sources */,
+				48CC99762A4830F900F35A9E /* AppDelegate.swift in Sources */,
 				48A7CFD52A343ED6005A92FC /* SplashView.swift in Sources */,
 				48FFFC832A3C8CBB00611C75 /* CurrentMonthExpenditureDetailViewModel.swift in Sources */,
 				4850B91A2A35BF2000B73290 /* HomeViewModel.swift in Sources */,
@@ -680,6 +696,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48CC997B2A4834F800F35A9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48CC997C2A4834F800F35A9E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48CC997B2A4834F800F35A9E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48A7CFB62A342647005A92FC /* Project object */;
 }

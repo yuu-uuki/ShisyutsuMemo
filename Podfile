@@ -6,7 +6,6 @@ target 'ShisyutsuMemo' do
   use_frameworks!
 
   pod 'RealmSwift'
-  pod 'Firebase/Analytics'
 
   # Pods for ShisyutsuMemo
 
