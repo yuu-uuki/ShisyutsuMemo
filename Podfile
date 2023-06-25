@@ -6,6 +6,7 @@ target 'ShisyutsuMemo' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'LicensePlist'
 
   # Pods for ShisyutsuMemo
 

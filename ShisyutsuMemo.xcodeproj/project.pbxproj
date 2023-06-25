@@ -30,6 +30,7 @@
 		48CC99762A4830F900F35A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CC99752A4830F900F35A9E /* AppDelegate.swift */; };
 		48CC997A2A4833D000F35A9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48CC99792A4833D000F35A9E /* GoogleService-Info.plist */; };
 		48CC997D2A4834F800F35A9E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 48CC997C2A4834F800F35A9E /* FirebaseAnalytics */; };
+		48CC997F2A4839E900F35A9E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48CC997E2A4839E900F35A9E /* Settings.bundle */; };
 		48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */; };
 		48FFFC712A3B714100611C75 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC702A3B714100611C75 /* Tab.swift */; };
 		48FFFC732A3B737100611C75 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFC722A3B737100611C75 /* CustomTabBar.swift */; };
@@ -70,6 +71,7 @@
 		48CC99682A44AD9E00F35A9E /* TermsOfService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfService.swift; sourceTree = "<group>"; };
 		48CC99752A4830F900F35A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48CC99792A4833D000F35A9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48CC997E2A4839E900F35A9E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		48FFFC6E2A3B6CA600611C75 /* CustomCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCornerRadius.swift; sourceTree = "<group>"; };
 		48FFFC702A3B714100611C75 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		48FFFC722A3B737100611C75 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				48A7CFC52A34264E005A92FC /* Assets.xcassets */,
 				48A7CFC72A34264E005A92FC /* ShisyutsuMemo.entitlements */,
 				48A7CFC82A34264E005A92FC /* Preview Content */,
+				48CC997E2A4839E900F35A9E /* Settings.bundle */,
 			);
 			path = ShisyutsuMemo;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				48A7CFBB2A342647005A92FC /* Frameworks */,
 				48A7CFBC2A342647005A92FC /* Resources */,
 				E4A76DA7CB21BDAEB045B174 /* [CP] Embed Pods Frameworks */,
+				48CC99822A483A9B00F35A9E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -389,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CC997F2A4839E900F35A9E /* Settings.bundle in Resources */,
 				48A7CFCA2A34264E005A92FC /* Preview Assets.xcassets in Resources */,
 				48A7CFC62A34264E005A92FC /* Assets.xcassets in Resources */,
 				48CC997A2A4833D000F35A9E /* GoogleService-Info.plist in Resources */,
@@ -398,6 +403,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		48CC99822A483A9B00F35A9E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n    ${PODS_ROOT}/LicensePlist/license-plist --output-path $PROJECT_NAME/Settings.bundle\nfi\n";
+		};
 		CAACDF0DCB1F53D57B11A822 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
