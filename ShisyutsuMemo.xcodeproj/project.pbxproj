@@ -627,6 +627,7 @@
 				DEVELOPMENT_TEAM = LQ2T6Z629P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GADApplicationIdentifier = "ca-app-pub-3940256099942544~1458002511";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShisyutsuMemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "支出メモ";
@@ -668,6 +669,7 @@
 				DEVELOPMENT_TEAM = LQ2T6Z629P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GADApplicationIdentifier = "ca-app-pub-3390578143891201~4544449622";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShisyutsuMemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "支出メモ";

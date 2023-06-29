@@ -7,6 +7,7 @@ target 'ShisyutsuMemo' do
 
   pod 'RealmSwift'
   pod 'LicensePlist'
+  pod 'Google-Mobile-Ads-SDK'
 
   # Pods for ShisyutsuMemo
 

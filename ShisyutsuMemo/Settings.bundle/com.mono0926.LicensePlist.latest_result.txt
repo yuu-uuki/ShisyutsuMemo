@@ -1,8 +1,34 @@
+name: Google-Mobile-Ads-SDK, nameSpecified: 
+body: Copyright 2023 Googl…
+version: 10.6.0
+
+name: GoogleAppMeasurement, nameSpecified: 
+body: Copyright 2022 Googl…
+version: 10.11.0
+
+name: GoogleUserMessagingPlatform, nameSpecified: 
+body: Copyright 2022 Googl…
+version: 2.0.1
+
+name: GoogleUtilities, nameSpecified: 
+body: 
+                   …
+version: 7.11.1
+
 name: LicensePlist, nameSpecified: 
 body: MIT License
 
 Copyrig…
 version: 3.24.9
+
+name: nanopb, nameSpecified: 
+body: Copyright (c) 2011 P…
+version: 2.30909.0
+
+name: PromisesObjC, nameSpecified: 
+body: 
+                   …
+version: 2.2.0
 
 name: Realm, nameSpecified: 
 body:                     …
