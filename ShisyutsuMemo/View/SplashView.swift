@@ -14,7 +14,7 @@ struct SplashView: View {
         if isLoading {
             Image("icon_app")
                 .resizable()
-                .frame(width: 200, height: 200)
+                .frame(width: 300, height: 300)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         withAnimation {
