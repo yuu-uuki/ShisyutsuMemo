@@ -54,7 +54,7 @@ extension ExpenseView {
         VStack(alignment: .trailing, spacing: 10) {
             Text(paymentType)
                 .memoFont(size: 14, weight: .bold)
-                .frame(width: 110, height: 32)
+                .frame(width: 120, height: 28)
                 .background(Color("lightGray"))
                 .modifier(CustomCornerRadius(corner: 6, color: .clear))
             Text(memo)
