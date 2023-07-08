@@ -33,6 +33,8 @@ struct ExpensesInputView: View {
                 paymentType()
                 dateInput()
                 memoInput()
+                AdBanner()
+                    .expectedFrame()
                 footerButton()
             }
             .padding(.top, 40)

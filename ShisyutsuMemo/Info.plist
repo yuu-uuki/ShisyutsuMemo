@@ -44,6 +44,6 @@
 	<key>GADIsAdManagerApp</key>
 	<true/>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>This identifier will be used to deliver personalized ads to you.</string>
+	<string>許可するとあなたの好みに最適化された広告が表示されやすくなります</string>
 </dict>
 </plist>
