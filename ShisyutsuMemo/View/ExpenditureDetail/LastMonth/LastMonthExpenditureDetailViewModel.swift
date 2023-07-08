@@ -12,6 +12,7 @@ final class LastMonthExpenditureDetailViewModel: ViewModelObject {
 
     private let getCurrentMonthUseCase = GetCurrentMonthUseCaseProvider.provide()
     private let expenditureUseCase = ExpenditureUseCaseProvider.provide()
+    private let spendingUseCase = SpendingUseCaseProvider.provide()
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth = ""
@@ -21,6 +22,7 @@ final class LastMonthExpenditureDetailViewModel: ViewModelObject {
         @Published var showAmountInputSheet = false
         @Published var expenditure: [Expenditure] = []
         @Published var totalExpenditure: Int = 0
+        @Published var isShowInterstitial = false
     }
 
     let output: Output
@@ -37,6 +39,9 @@ extension LastMonthExpenditureDetailViewModel {
         output.currentMonth = (getCurrentMonthUseCase.get() - 1).description
         binding.expenditure = expenditureUseCase.fetchLastMonthExpenditures()
         binding.totalExpenditure = expenditureUseCase.fetchTotalExpenditureForLastMonth()
+        if spendingUseCase.showInterstitial() {
+            binding.isShowInterstitial = true
+        }
     }
 }
 

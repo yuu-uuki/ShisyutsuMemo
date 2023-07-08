@@ -12,6 +12,7 @@ final class ExpensesInputViewModel: ViewModelObject {
 
     private let expenditureUseCase = ExpenditureUseCaseProvider.provide()
     private let updateExpenditure: Expenditure?
+    private let spendingUseCase = SpendingUseCaseProvider.provide()
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth: String?
@@ -52,6 +53,7 @@ extension ExpensesInputViewModel {
             paymentType: binding.paymentType,
             memo: binding.memoText
         )
+        spendingUseCase.incrementSpentTimes()
     }
 
     func onTapUpdateButton() {
@@ -65,6 +67,7 @@ extension ExpensesInputViewModel {
             paymentType: binding.paymentType,
             memo: binding.memoText
         )
+        spendingUseCase.incrementSpentTimes()
     }
 
     func onTapDeleteButton() {
@@ -72,5 +75,6 @@ extension ExpensesInputViewModel {
             return
         }
         expenditureUseCase.deleteExpenditure(updateExpenditure)
+        spendingUseCase.incrementSpentTimes()
     }
 }

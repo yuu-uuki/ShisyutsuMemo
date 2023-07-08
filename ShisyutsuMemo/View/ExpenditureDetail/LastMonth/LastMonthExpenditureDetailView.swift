@@ -12,13 +12,19 @@ struct LastMonthExpenditureDetailView: View {
     @ObservedObject var viewModel = LastMonthExpenditureDetailViewModel()
 
     var body: some View {
-        VStack(spacing: 20) {
-            amountView()
-            expenditureView(expenditure: viewModel.binding.expenditure)
-        }
-        .padding(.horizontal, 24)
-        .onAppear {
-            viewModel.onAppear()
+        ZStack(alignment: .top) {
+            VStack(spacing: 20) {
+                amountView()
+                expenditureView(expenditure: viewModel.binding.expenditure)
+            }
+            .padding(.horizontal, 24)
+            .onAppear {
+                viewModel.onAppear()
+            }
+
+            if viewModel.binding.isShowInterstitial {
+                // TODO: 広告表示
+            }
         }
     }
 }

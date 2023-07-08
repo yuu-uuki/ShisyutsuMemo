@@ -36,6 +36,10 @@ struct CurrentMonthExpenditureDetailView: View {
                     viewModel.fetchIDFA()
                 }
             }
+
+            if viewModel.binding.isShowInterstitial {
+                // TODO: 広告表示
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ final class CurrentMonthExpenditureDetailViewModel: ViewModelObject {
     private let getCurrentMonthUseCase = GetCurrentMonthUseCaseProvider.provide()
     private let expenditureUseCase = ExpenditureUseCaseProvider.provide()
     private let idfaUseCase = IDFAUseCaseProvider.provide()
+    private let spendingUseCase = SpendingUseCaseProvider.provide()
 
     final class Output: OutputObject {
         @Published fileprivate(set) var currentMonth = ""
@@ -24,6 +25,7 @@ final class CurrentMonthExpenditureDetailViewModel: ViewModelObject {
         @Published var totalExpenditure: Int = 0
         @Published var isShowModal = false
         @Published var showIDFAPopupView = false
+        @Published var isShowInterstitial = false
     }
 
     let output: Output
@@ -42,6 +44,9 @@ extension CurrentMonthExpenditureDetailViewModel {
         binding.totalExpenditure = expenditureUseCase.fetchTotalExpenditureForCurrentMonth()
         if idfaUseCase.shouldDisplayIDFAPopup() {
             self.binding.showIDFAPopupView = true
+        }
+        if spendingUseCase.showInterstitial() {
+            binding.isShowInterstitial = true
         }
     }
 

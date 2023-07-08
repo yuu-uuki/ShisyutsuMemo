@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A932D7E396EEE967E79FFC2 /* Pods_ShisyutsuMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E31AF00A173223010FA4AB /* Pods_ShisyutsuMemo.framework */; };
+		4817BA6C2A59BA2900022FE3 /* DefaultsKeys+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA6B2A59BA2900022FE3 /* DefaultsKeys+.swift */; };
+		4817BA6E2A59BACA00022FE3 /* SpendingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA6D2A59BACA00022FE3 /* SpendingRepository.swift */; };
+		4817BA702A59BB6300022FE3 /* SpendingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA6F2A59BB6300022FE3 /* SpendingUseCase.swift */; };
 		481D38482A40B538000A2D63 /* LastMonthExpenditureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */; };
 		481D384C2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */; };
 		481D38522A420AD6000A2D63 /* ExpenditureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38512A420AD6000A2D63 /* ExpenditureAction.swift */; };
@@ -51,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4817BA6B2A59BA2900022FE3 /* DefaultsKeys+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+.swift"; sourceTree = "<group>"; };
+		4817BA6D2A59BACA00022FE3 /* SpendingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingRepository.swift; sourceTree = "<group>"; };
+		4817BA6F2A59BB6300022FE3 /* SpendingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCase.swift; sourceTree = "<group>"; };
 		481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailView.swift; sourceTree = "<group>"; };
 		481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailViewModel.swift; sourceTree = "<group>"; };
 		481D38512A420AD6000A2D63 /* ExpenditureAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureAction.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				4850B91E2A35C13000B73290 /* GetCurrentMonthUseCase.swift */,
 				48FFFC922A3EDE2F00611C75 /* ExpenditureUseCase.swift */,
 				485346972A598A5900911299 /* IDFAUseCase.swift */,
+				4817BA6F2A59BB6300022FE3 /* SpendingUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -305,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				48FFFC872A3D8E4800611C75 /* PaymentType.swift */,
+				4817BA6B2A59BA2900022FE3 /* DefaultsKeys+.swift */,
 				48CC99682A44AD9E00F35A9E /* TermsOfService.swift */,
 			);
 			path = Entity;
@@ -333,6 +341,7 @@
 			children = (
 				48FFFC902A3EDDB200611C75 /* ExpenditureRepository.swift */,
 				485346952A5989B900911299 /* IDFARepository.swift */,
+				4817BA6D2A59BACA00022FE3 /* SpendingRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -494,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4817BA6E2A59BACA00022FE3 /* SpendingRepository.swift in Sources */,
 				48CC99692A44AD9E00F35A9E /* TermsOfService.swift in Sources */,
 				48FFFC972A40AAEF00611C75 /* Date+.swift in Sources */,
 				48A7CFC42A342647005A92FC /* HomeView.swift in Sources */,
@@ -527,6 +537,8 @@
 				48FFFC782A3B7AFC00611C75 /* UnderLine.swift in Sources */,
 				48FFFC812A3C8C4A00611C75 /* CurrentMonthExpenditureDetailView.swift in Sources */,
 				4850B9262A35D5D900B73290 /* ExpensesInputView.swift in Sources */,
+				4817BA6C2A59BA2900022FE3 /* DefaultsKeys+.swift in Sources */,
+				4817BA702A59BB6300022FE3 /* SpendingUseCase.swift in Sources */,
 				485346942A5955FB00911299 /* AdBanner.swift in Sources */,
 				48FFFC912A3EDDB200611C75 /* ExpenditureRepository.swift in Sources */,
 			);
