@@ -17,6 +17,7 @@
 		4850B9222A35C95400B73290 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B9212A35C95400B73290 /* Text+.swift */; };
 		4850B9262A35D5D900B73290 /* ExpensesInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B9252A35D5D900B73290 /* ExpensesInputView.swift */; };
 		4850B9282A35DA2000B73290 /* ExpensesInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B9272A35DA2000B73290 /* ExpensesInputViewModel.swift */; };
+		485346942A5955FB00911299 /* AdBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485346932A5955FB00911299 /* AdBanner.swift */; };
 		48A7CFC22A342647005A92FC /* ShisyutsuMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7CFC12A342647005A92FC /* ShisyutsuMemoApp.swift */; };
 		48A7CFC42A342647005A92FC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7CFC32A342647005A92FC /* HomeView.swift */; };
 		48A7CFC62A34264E005A92FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A7CFC52A34264E005A92FC /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		4850B9212A35C95400B73290 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		4850B9252A35D5D900B73290 /* ExpensesInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesInputView.swift; sourceTree = "<group>"; };
 		4850B9272A35DA2000B73290 /* ExpensesInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesInputViewModel.swift; sourceTree = "<group>"; };
+		485346932A5955FB00911299 /* AdBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBanner.swift; sourceTree = "<group>"; };
 		48A7CFBE2A342647005A92FC /* ShisyutsuMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShisyutsuMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A7CFC12A342647005A92FC /* ShisyutsuMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShisyutsuMemoApp.swift; sourceTree = "<group>"; };
 		48A7CFC32A342647005A92FC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			path = ExpensesInput;
 			sourceTree = "<group>";
 		};
+		485346902A59422E00911299 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				485346932A5955FB00911299 /* AdBanner.swift */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
 		48A7CFB52A342647005A92FC = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +217,7 @@
 		48A7CFD32A343EC2005A92FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				485346902A59422E00911299 /* AdMob */,
 				48CC99632A44A36E00F35A9E /* Utility */,
 				48CC99622A44A35A00F35A9E /* TermsOfServiceView */,
 				48CC995D2A449C7900F35A9E /* SettingView */,
@@ -496,6 +507,7 @@
 				48FFFC782A3B7AFC00611C75 /* UnderLine.swift in Sources */,
 				48FFFC812A3C8C4A00611C75 /* CurrentMonthExpenditureDetailView.swift in Sources */,
 				4850B9262A35D5D900B73290 /* ExpensesInputView.swift in Sources */,
+				485346942A5955FB00911299 /* AdBanner.swift in Sources */,
 				48FFFC912A3EDDB200611C75 /* ExpenditureRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,7 +635,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShisyutsuMemo/ShisyutsuMemo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ShisyutsuMemo/Preview Content\"";
 				DEVELOPMENT_TEAM = NM58RL3P2Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -670,7 +682,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShisyutsuMemo/ShisyutsuMemo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ShisyutsuMemo/Preview Content\"";
 				DEVELOPMENT_TEAM = NM58RL3P2Y;
 				ENABLE_HARDENED_RUNTIME = YES;
