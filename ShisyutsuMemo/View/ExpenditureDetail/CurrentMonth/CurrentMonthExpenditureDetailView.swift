@@ -12,23 +12,30 @@ struct CurrentMonthExpenditureDetailView: View {
     @ObservedObject var viewModel = CurrentMonthExpenditureDetailViewModel()
 
     var body: some View {
-        VStack(spacing: 20) {
-            amountView()
-            expenditureView(expenditure: viewModel.binding.expenditure)
-        }
-        .padding(.horizontal, 24)
-        .onAppear {
-            viewModel.onAppear()
-        }
-        .sheet(isPresented: viewModel.$binding.isShowModal, onDismiss: {
-            viewModel.onAppear()
-        }) {
-            ExpensesInputView(
-                viewModel: ExpensesInputViewModel(
-                    updateExpenditure: nil),
-                isShowModal: viewModel.$binding.isShowModal,
-                type: .input
-            )
+        ZStack(alignment: .top) {
+            VStack(spacing: 20) {
+                amountView()
+                expenditureView(expenditure: viewModel.binding.expenditure)
+            }
+            .padding(.horizontal, 24)
+            .onAppear {
+                viewModel.onAppear()
+            }
+            .sheet(isPresented: viewModel.$binding.isShowModal, onDismiss: {
+                viewModel.onAppear()
+            }) {
+                ExpensesInputView(
+                    viewModel: ExpensesInputViewModel(
+                        updateExpenditure: nil),
+                    isShowModal: viewModel.$binding.isShowModal,
+                    type: .input
+                )
+            }
+            if viewModel.binding.showIDFAPopupView {
+                IDFAPopupView(isPresented: viewModel.$binding.showIDFAPopupView) {
+                    viewModel.fetchIDFA()
+                }
+            }
         }
     }
 }

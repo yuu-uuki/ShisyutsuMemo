@@ -17,7 +17,7 @@ enum IDFAUseCaseProvider {
 
 protocol IDFAUseCase {
     func execute(completion: @escaping (Result<String, Error>) -> Void)
-    func getStatus(completion: @escaping () -> Void)
+    func shouldDisplayIDFAPopup() -> Bool
 }
 
 private struct IDFAUseCaseImpl: IDFAUseCase {
@@ -31,16 +31,16 @@ private struct IDFAUseCaseImpl: IDFAUseCase {
         repository.getIDFA(completion: completion)
     }
 
-    func getStatus(completion: @escaping () -> Void) {
+    func shouldDisplayIDFAPopup() -> Bool {
         switch repository.getIDFAStatus() {
         case .notDetermined:
-            completion()
+            return true
         case .restricted,
              .denied,
              .authorized:
-            break
+            return false
         @unknown default:
-            break
+            return false
         }
     }
 }
