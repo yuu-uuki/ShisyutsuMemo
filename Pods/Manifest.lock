@@ -52,11 +52,13 @@ PODS:
   - Realm/Headers (10.41.0)
   - RealmSwift (10.41.0):
     - Realm (= 10.41.0)
+  - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - LicensePlist
   - RealmSwift
+  - SwiftyUserDefaults (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -69,6 +71,7 @@ SPEC REPOS:
     - PromisesObjC
     - Realm
     - RealmSwift
+    - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 2b62c695321edc7827857ac19eaeab89b57f6862
@@ -80,7 +83,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   Realm: 669efee7dc1ce0aa9f6739a60f8c0df0a3835067
   RealmSwift: 6b7b0e91b79dc66d5cfceeb3b319cacfc9b1a70e
+  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: 8dd0c64afee7456dd4d4fc3f3c0a425768922a4c
+PODFILE CHECKSUM: 8741e03e117a012ad048e9b9da2478c4b5a241b9
 
 COCOAPODS: 1.12.1

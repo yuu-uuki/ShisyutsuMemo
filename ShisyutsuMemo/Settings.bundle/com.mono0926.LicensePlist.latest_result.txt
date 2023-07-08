@@ -38,6 +38,10 @@ name: RealmSwift, nameSpecified:
 body:                     …
 version: 10.41.0
 
+name: SwiftyUserDefaults, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.3.0
+
 name: abseil-cpp-SwiftPM, nameSpecified: abseil, owner: firebase, version: 0.20220203.2, source: https://github.com/firebase/abseil-cpp-SwiftPM
 
 name: boringssl-SwiftPM, nameSpecified: BoringSSL-GRPC, owner: firebase, version: 0.9.1, source: https://github.com/firebase/boringssl-SwiftPM
