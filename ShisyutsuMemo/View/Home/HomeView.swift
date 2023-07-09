@@ -15,7 +15,7 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .top) {
                 settingView()
                 VStack(spacing: 40) {
                     Image("icon_title")
@@ -28,6 +28,7 @@ struct HomeView: View {
                 .onAppear {
                     viewModel.onAppear()
                 }
+                .navigationBarHidden(true)
             }
         }
     }
@@ -64,7 +65,6 @@ private extension HomeView {
             }
             .padding(.top, 28)
             .padding(.horizontal, 24)
-            Spacer()
         }
     }
 }

@@ -36,9 +36,9 @@ struct ExpensesInputView: View {
                 AdBanner()
                     .expectedFrame()
                 footerButton()
+                Spacer()
             }
             .padding(.top, 40)
-            .padding(.horizontal, 30)
         }
         .onAppear {
             selectedItem = viewModel.binding.paymentType
@@ -58,6 +58,7 @@ extension ExpensesInputView {
                 .keyboardType(.numberPad) // 数字キーボードの表示
                 .modifier(CustomTextInputField())
         }
+        .padding(.horizontal, 30)
     }
 
     private func paymentType() -> some View {
@@ -82,6 +83,7 @@ extension ExpensesInputView {
                 }
             }
         }
+        .padding(.horizontal, 30)
     }
 
     private func dateInput() -> some View {
@@ -92,6 +94,7 @@ extension ExpensesInputView {
             DatePicker("", selection: viewModel.$binding.selectDate, displayedComponents: [.date])
                 .environment(\.locale, Locale(identifier: "ja_JP"))
         }
+        .padding(.horizontal, 30)
     }
 
     private func memoInput() -> some View {
@@ -102,6 +105,7 @@ extension ExpensesInputView {
                         .frame(height: 80)
                         .modifier(CustomTextInputField())
         }
+        .padding(.horizontal, 30)
     }
 
     private func footerButton() -> some View {
