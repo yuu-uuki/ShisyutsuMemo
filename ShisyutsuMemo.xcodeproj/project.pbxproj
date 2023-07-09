@@ -130,6 +130,14 @@
 			path = Interstitial;
 			sourceTree = "<group>";
 		};
+		4817BA782A5A9A6F00022FE3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				485346902A59422E00911299 /* AdMob */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		481D38492A40B573000A2D63 /* CurrentMonth */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +261,8 @@
 		48A7CFD32A343EC2005A92FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4817BA782A5A9A6F00022FE3 /* Entity */,
 				485346992A599FC200911299 /* IDFAPopup */,
-				485346902A59422E00911299 /* AdMob */,
 				48CC99632A44A36E00F35A9E /* Utility */,
 				48CC99622A44A35A00F35A9E /* TermsOfServiceView */,
 				48CC995D2A449C7900F35A9E /* SettingView */,
