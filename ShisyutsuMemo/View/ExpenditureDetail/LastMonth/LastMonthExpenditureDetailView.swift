@@ -14,24 +14,24 @@ struct LastMonthExpenditureDetailView: View {
     private var adCoordinator = AdCoordinator()
 
     var body: some View {
-            VStack(spacing: 20) {
-                amountView()
-                expenditureView(expenditure: viewModel.binding.expenditure)
+        VStack(spacing: 20) {
+            amountView()
+            expenditureView(expenditure: viewModel.binding.expenditure)
+        }
+        .padding(.horizontal, 24)
+        .onAppear {
+            viewModel.onAppear()
+            adCoordinator.loadAd()
+        }
+        .background {
+            adViewControllerRepresentable
+                .frame(width: .zero, height: .zero)
+        }
+        .onReceive(viewModel.binding.$isShowInterstitial) { isShowFlg in
+            if isShowFlg {
+                adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
             }
-            .padding(.horizontal, 24)
-            .onAppear {
-                viewModel.onAppear()
-                adCoordinator.loadAd()
-            }
-            .background {
-                adViewControllerRepresentable
-                    .frame(width: .zero, height: .zero)
-            }
-            .onReceive(viewModel.binding.$isShowInterstitial) { isShowFlg in
-                if isShowFlg {
-                    adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
-                }
-            }
+        }
     }
 }
 
