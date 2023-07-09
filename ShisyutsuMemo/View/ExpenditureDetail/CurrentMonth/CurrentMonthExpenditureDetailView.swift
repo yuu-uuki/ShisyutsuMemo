@@ -10,6 +10,8 @@ import SwiftUI
 struct CurrentMonthExpenditureDetailView: View {
 
     @ObservedObject var viewModel = CurrentMonthExpenditureDetailViewModel()
+    private let adViewControllerRepresentable = AdViewControllerRepresentable()
+    private var adCoordinator = AdCoordinator()
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -20,6 +22,7 @@ struct CurrentMonthExpenditureDetailView: View {
             .padding(.horizontal, 24)
             .onAppear {
                 viewModel.onAppear()
+                adCoordinator.loadAd()
             }
             .sheet(isPresented: viewModel.$binding.isShowModal, onDismiss: {
                 viewModel.onAppear()
@@ -36,9 +39,14 @@ struct CurrentMonthExpenditureDetailView: View {
                     viewModel.fetchIDFA()
                 }
             }
-
-            if viewModel.binding.isShowInterstitial {
-                // TODO: 広告表示
+        }
+        .background {
+            adViewControllerRepresentable
+                .frame(width: .zero, height: .zero)
+        }
+        .onReceive(viewModel.binding.$isShowInterstitial) { isShowFlg in
+            if isShowFlg {
+                adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
             }
         }
     }

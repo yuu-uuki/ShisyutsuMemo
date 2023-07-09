@@ -11,6 +11,8 @@
 		4817BA6C2A59BA2900022FE3 /* DefaultsKeys+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA6B2A59BA2900022FE3 /* DefaultsKeys+.swift */; };
 		4817BA6E2A59BACA00022FE3 /* SpendingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA6D2A59BACA00022FE3 /* SpendingRepository.swift */; };
 		4817BA702A59BB6300022FE3 /* SpendingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA6F2A59BB6300022FE3 /* SpendingUseCase.swift */; };
+		4817BA742A59DBF400022FE3 /* AdCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA732A59DBF400022FE3 /* AdCoordinator.swift */; };
+		4817BA762A59DC7C00022FE3 /* AdViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817BA752A59DC7C00022FE3 /* AdViewControllerRepresentable.swift */; };
 		481D38482A40B538000A2D63 /* LastMonthExpenditureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */; };
 		481D384C2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */; };
 		481D38522A420AD6000A2D63 /* ExpenditureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38512A420AD6000A2D63 /* ExpenditureAction.swift */; };
@@ -57,6 +59,8 @@
 		4817BA6B2A59BA2900022FE3 /* DefaultsKeys+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultsKeys+.swift"; sourceTree = "<group>"; };
 		4817BA6D2A59BACA00022FE3 /* SpendingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingRepository.swift; sourceTree = "<group>"; };
 		4817BA6F2A59BB6300022FE3 /* SpendingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUseCase.swift; sourceTree = "<group>"; };
+		4817BA732A59DBF400022FE3 /* AdCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCoordinator.swift; sourceTree = "<group>"; };
+		4817BA752A59DC7C00022FE3 /* AdViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailView.swift; sourceTree = "<group>"; };
 		481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailViewModel.swift; sourceTree = "<group>"; };
 		481D38512A420AD6000A2D63 /* ExpenditureAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureAction.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4817BA772A5A974B00022FE3 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				4817BA752A59DC7C00022FE3 /* AdViewControllerRepresentable.swift */,
+				4817BA732A59DBF400022FE3 /* AdCoordinator.swift */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
 		481D38492A40B573000A2D63 /* CurrentMonth */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				485346932A5955FB00911299 /* AdBanner.swift */,
+				4817BA772A5A974B00022FE3 /* Interstitial */,
 			);
 			path = AdMob;
 			sourceTree = "<group>";
@@ -522,6 +536,7 @@
 				48FFFC762A3B765600611C75 /* ExpenseView.swift in Sources */,
 				4853469B2A599FE600911299 /* IDFAPopupView.swift in Sources */,
 				4850B91C2A35BFD500B73290 /* ViewModelObject.swift in Sources */,
+				4817BA762A59DC7C00022FE3 /* AdViewControllerRepresentable.swift in Sources */,
 				48FFFC8E2A3EDD2200611C75 /* Expenditure.swift in Sources */,
 				48FFFC712A3B714100611C75 /* Tab.swift in Sources */,
 				48FFFC6F2A3B6CA600611C75 /* CustomCornerRadius.swift in Sources */,
@@ -541,6 +556,7 @@
 				4817BA702A59BB6300022FE3 /* SpendingUseCase.swift in Sources */,
 				485346942A5955FB00911299 /* AdBanner.swift in Sources */,
 				48FFFC912A3EDDB200611C75 /* ExpenditureRepository.swift in Sources */,
+				4817BA742A59DBF400022FE3 /* AdCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

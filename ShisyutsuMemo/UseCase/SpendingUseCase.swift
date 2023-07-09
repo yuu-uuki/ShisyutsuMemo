@@ -18,7 +18,6 @@ enum SpendingUseCaseProvider {
 protocol SpendingUseCase {
     func showInterstitial() -> Bool
     func incrementSpentTimes()
-    func resetSpentTimes()
 }
 
 private struct SpendingUseCaseImpl: SpendingUseCase {
@@ -30,14 +29,15 @@ private struct SpendingUseCaseImpl: SpendingUseCase {
     }
 
     func showInterstitial() -> Bool {
-        repository.getSpentTimes() >= 3
+        if repository.getSpentTimes() >= 3 {
+            repository.resetSpentTimes()
+            return true
+        } else {
+            return false
+        }
     }
 
     func incrementSpentTimes() {
         repository.incrementSpentTimes()
-    }
-
-    func resetSpentTimes() {
-        repository.resetSpentTimes()
     }
 }

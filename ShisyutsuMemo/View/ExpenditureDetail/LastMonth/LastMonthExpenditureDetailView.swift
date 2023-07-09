@@ -10,9 +10,10 @@ import SwiftUI
 struct LastMonthExpenditureDetailView: View {
 
     @ObservedObject var viewModel = LastMonthExpenditureDetailViewModel()
+    private let adViewControllerRepresentable = AdViewControllerRepresentable()
+    private var adCoordinator = AdCoordinator()
 
     var body: some View {
-        ZStack(alignment: .top) {
             VStack(spacing: 20) {
                 amountView()
                 expenditureView(expenditure: viewModel.binding.expenditure)
@@ -20,12 +21,17 @@ struct LastMonthExpenditureDetailView: View {
             .padding(.horizontal, 24)
             .onAppear {
                 viewModel.onAppear()
+                adCoordinator.loadAd()
             }
-
-            if viewModel.binding.isShowInterstitial {
-                // TODO: 広告表示
+            .background {
+                adViewControllerRepresentable
+                    .frame(width: .zero, height: .zero)
             }
-        }
+            .onReceive(viewModel.binding.$isShowInterstitial) { isShowFlg in
+                if isShowFlg {
+                    adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
+                }
+            }
     }
 }
 
