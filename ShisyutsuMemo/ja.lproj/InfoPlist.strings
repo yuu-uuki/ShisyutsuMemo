@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  ShisyutsuMemo
+
+  Created by yuki.tanaka on 2023/07/20.
+  
+*/
+NSUserTrackingUsageDescription = "許可するとあなたの好みに最適化された広告が表示されやすくなります";

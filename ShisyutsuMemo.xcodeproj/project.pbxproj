@@ -16,6 +16,7 @@
 		481D38482A40B538000A2D63 /* LastMonthExpenditureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */; };
 		481D384C2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */; };
 		481D38522A420AD6000A2D63 /* ExpenditureAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D38512A420AD6000A2D63 /* ExpenditureAction.swift */; };
+		483A91552A68CC6C00EDD751 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 483A91572A68CC6C00EDD751 /* InfoPlist.strings */; };
 		4850B91A2A35BF2000B73290 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B9192A35BF2000B73290 /* HomeViewModel.swift */; };
 		4850B91C2A35BFD500B73290 /* ViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B91B2A35BFD500B73290 /* ViewModelObject.swift */; };
 		4850B91F2A35C13000B73290 /* GetCurrentMonthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850B91E2A35C13000B73290 /* GetCurrentMonthUseCase.swift */; };
@@ -64,6 +65,7 @@
 		481D38472A40B538000A2D63 /* LastMonthExpenditureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailView.swift; sourceTree = "<group>"; };
 		481D384B2A40B5A0000A2D63 /* LastMonthExpenditureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthExpenditureDetailViewModel.swift; sourceTree = "<group>"; };
 		481D38512A420AD6000A2D63 /* ExpenditureAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureAction.swift; sourceTree = "<group>"; };
+		483A91562A68CC6C00EDD751 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4850B9192A35BF2000B73290 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4850B91B2A35BFD500B73290 /* ViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelObject.swift; sourceTree = "<group>"; };
 		4850B91E2A35C13000B73290 /* GetCurrentMonthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentMonthUseCase.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				48A7CFC72A34264E005A92FC /* ShisyutsuMemo.entitlements */,
 				48A7CFC82A34264E005A92FC /* Preview Content */,
 				48CC997E2A4839E900F35A9E /* Settings.bundle */,
+				483A91572A68CC6C00EDD751 /* InfoPlist.strings */,
 			);
 			path = ShisyutsuMemo;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 48A7CFB52A342647005A92FC;
 			packageReferences = (
@@ -456,6 +460,7 @@
 				48A7CFCA2A34264E005A92FC /* Preview Assets.xcassets in Resources */,
 				48A7CFC62A34264E005A92FC /* Assets.xcassets in Resources */,
 				48CC997A2A4833D000F35A9E /* GoogleService-Info.plist in Resources */,
+				483A91552A68CC6C00EDD751 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +574,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		483A91572A68CC6C00EDD751 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				483A91562A68CC6C00EDD751 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48A7CFCB2A34264E005A92FC /* Debug */ = {
