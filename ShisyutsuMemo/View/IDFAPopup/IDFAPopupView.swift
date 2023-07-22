@@ -75,7 +75,7 @@ extension IDFAPopupView {
                 completion()
             }
         } label: {
-            Text("閉じる")
+            Text("次へ")
                 .memoFont(size: 16, weight: .bold)
                 .foregroundColor(.white)
                 .padding(.vertical, 14)
