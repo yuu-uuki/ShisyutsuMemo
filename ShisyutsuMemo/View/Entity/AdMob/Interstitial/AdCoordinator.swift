@@ -14,7 +14,7 @@ class AdCoordinator: NSObject, GADFullScreenContentDelegate {
   #if DEBUG
   private let adUnitID = "ca-app-pub-3940256099942544/4411468910"
   #else
-  private let adUnitID = "ca-app-pub-3940256099942544/4411468910"
+  private let adUnitID = "ca-app-pub-3390578143891201/7415370560"
   #endif
 
     func loadAd() {
